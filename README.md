@@ -3,7 +3,7 @@ A backplane bus for simple 8-bit, 16-bit, and potentially 32-bit computers.
 
 This is a project started the evening of the 11th of March, 2022, to create a simple Motorola MC68000 based backplane computer. I don't know if it's going to end up materializing without a source of funding to purchase chips, sockets, capacitors, and have PCBs made or source wire wrap testing boards. The scope of the project has changed to be a general purpose bus for a number of potential target CPUs on "System Card Sets", including the MOS Technologies 6502, the Zilog Z80, the Motorola MC68000/MC68010, and the Motorola MC68020/MC68030. 
 
-##Expectations.
+## Expectations
 
 8-bit CPUs are expected to require a unique rom to be paired with them
 
