@@ -15,3 +15,10 @@ Power supplies are currently expected to be on the ATX standard to make availabi
 16-bit and 32-Bit CPUs might require their own sets of system cards, especially due to the LDS/UDS lines on the Motorola 68000 making memory addressing less straightforward. The MC68000 based machines are hopefully going to run ucLinux or OS-9/68K, but I'm not much of a software kind of girl so I am not aware of the amount of work that would be needed to port them to other machines. 
 
 The target video chip for various systems is currently unknown, but the audio chip, at least for the 16-bit machines, is likely to be a Yamaha YM2612 and a Texas Instruments SN76489, the same sound chip set found in the Sega Genesis/Master System. 
+
+## Boards
+- Board ID-001: MC68000 and MC68010 CPU Card Type A (PGA Socket)
+- Board ID-002: Baby AT 8-slot backplane
+- Board ID-003: MC68000 and MC68010 CPU PGA to DIP Adapter PCB
+- Board ID-004: MC68000 and MC68010 CPU COM-ACB Module
+- Board ID-005: Power Delivery Card
