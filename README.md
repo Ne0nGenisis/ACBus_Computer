@@ -17,8 +17,11 @@ Power supplies are currently expected to be on the ATX standard to make availabi
 The target video chip for various systems is currently unknown, but the audio chip, at least for the 16-bit machines, is likely to be a Yamaha YM2612 and a Texas Instruments SN76489, the same sound chip set found in the Sega Genesis/Master System. 
 
 ## Boards
-- Board ID-001: MC68000 and MC68010 CPU Card Type A (PGA Socket)
+### General Purpose
 - Board ID-002: Baby AT 8-slot backplane
+- Board ID-005: Power Delivery Card
+
+### MC68000 / MC68010
+- Board ID-001: MC68000 and MC68010 CPU Card Type A (PGA Socket)
 - Board ID-003: MC68000 and MC68010 CPU PGA to DIP Adapter PCB
 - Board ID-004: MC68000 and MC68010 CPU COM-ACB Module
-- Board ID-005: Power Delivery Card
