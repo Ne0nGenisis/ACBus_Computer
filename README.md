@@ -3,7 +3,17 @@ A backplane bus for simple 8-bit, 16-bit, and potentially 32-bit computers.
 
 This is a project started the evening of the 11th of March, 2022, to create a simple Motorola MC68000 based backplane computer. I don't know if it's going to end up materializing without a source of funding to purchase chips, sockets, capacitors, and have PCBs made or source wire wrap testing boards. The scope of the project has changed to be a general purpose bus for a number of potential target CPUs on "System Card Sets", including the MOS Technologies 6502, the Zilog Z80, the Motorola MC68000/MC68010, and the Motorola MC68020/MC68030. 
 
-The core of the system is a backplane that accepts cards on a 64-pin slot called "ACBUS" (for Anni's Computer Bus) which grounds the board and provides voltage from a standard ATX power supply, and a number of common pins between slots to facilitate communication across the target CPU's address and data buses. A 64+36-pin version called "ACB-EX" (Annika's Computer Bus Extended) tentatively exists for CPUs that have bus widths larger than 16 to 24-bits as the MC68000 does, and a version that sockets parallel to the motherboard called "COM-ACB" (Computer On Module for ACBUS) to allow more common motherboard form factors such as uATX without requiring system cards to be unsupported and wear on the card slots, or to make backplanes with a very small number of slots that would greatly restrict expansion possibilities due to the CPU, RAM, ROM, interface devices, and Audio/Video all being on their own cards. 
+## System Architecture
+
+The core of the system is a backplane that accepts cards on a 64-pin slot called "ACBUS" (for Anni's Computer Bus, Anni being me) which grounds the cards and provides voltage from a standard ATX power supply, and a number of common uncommitted pins between slots to facilitate communication across the target CPU's address and data buses. 
+
+Tentatively, two alternative versions of this slot exist. 
+
+### ACBUS Extended (ACB-EX)
+A 64+36-pin version for CPUs that have more than 40 bus pins plus signaling, as the MC68000 does, with the specific intention to support 32-bit processors such as the Motorola 68030 and, if they may be sourced and understood well enough to create a system architecture for them, MIPS R3000 series CPUs.
+
+### Computer on Module for ACBUS (COM-ACB)
+COM-ACB is intended to allow more common motherboard form factors such as uATX without requiring system cards to be unsupported and wear on the card slots, or to make backplanes with a very small number of slots that would greatly restrict expansion possibilities due to the CPU, RAM, ROM, interface devices, and Audio/Video all being on their own cards. 
 
 ## Expectations
 The current backplane design is an 8-slot board with Baby AT mounting holes that may also be placed into an ATX case, though it would be far less space efficient. 
@@ -20,8 +30,11 @@ The target video chip for various systems is currently unknown, but the audio ch
 ### General Purpose
 - Board ID-002: Baby AT 8-slot backplane
 - Board ID-005: Power Delivery Card
+- Board ID-007: ACBUS Prototyping Perfboard Card
 
-### MC68000 / MC68010
-- Board ID-001: MC68000 and MC68010 CPU Card Type A (PGA Socket)
-- Board ID-003: MC68000 and MC68010 CPU PGA to DIP Adapter PCB
-- Board ID-004: MC68000 and MC68010 CPU COM-ACB Module
+### MC68000 / MC68010 "Durandal" Set
+- Board ID-001A: MC68000/MC68010 CPU Card (PGA Socket)
+- Board ID-003: MC68000/MC68010 CPU PGA to DIP Adapter PCB
+- Board ID-004: MC68000/MC68010 CPU COM-ACB Module
+- Board ID-006: 4MB SRAM Card
+- Board ID-008: 1MB ROM Card
