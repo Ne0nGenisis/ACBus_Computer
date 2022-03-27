@@ -5,7 +5,7 @@ This is a project started the evening of the 11th of March, 2022, to create a si
 
 ## System Architecture
 
-The core of the system is a backplane that accepts cards on a 64-pin slot called "ACBUS" (for Anni's Computer Bus, Anni being me) which grounds the cards and provides voltage from a standard ATX power supply, and a number of common uncommitted pins between slots to facilitate communication across the target CPU's address and data buses. 
+The core of the system is a backplane that accepts cards on a 64-pin slot called "ACBUS" (for Anni's Computer Bus, Anni being me, Ne0nGenisis) which grounds the cards and provides voltage from a standard ATX power supply, and a number of common uncommitted pins between slots to facilitate communication across the target CPU's address and data buses. 
 
 Tentatively, two alternative versions of this slot exist. 
 
