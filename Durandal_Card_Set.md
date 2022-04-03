@@ -28,4 +28,8 @@ The two smaller logic ICs are for byte selection. With the way that the memory s
 These three ICs, the 74LS154, 74LS04, and 74LS08, or equivalents to replicate their functions, are to be duplicated across all cards to allow for address decoding. 
 
 ## Board ID-007: ROM Card (1MB)
-The ROM card is fundamentally the same as the RAM card, but it only features a single 1MB bank of M27C4001 EEPROM ICs and is assigned to bank 0, between address $000000 and $0FFFFF. This is due to the fact that the MC68000 CPU begins searching for instructions at this address and if it does not find them, it will halt. Theoretically this could be done with a coprocessor that serves only to load instructions to RAM, or a signal generated elsewhere 
+The ROM card is fundamentally the same as the RAM card, but it only features a single 1MB bank of M27C4001 EEPROM ICs and is assigned to bank 0, between address $000000 and $0FFFFF. 
+
+![ROMBoard](https://user-images.githubusercontent.com/37624825/161419825-74248307-7c33-4c73-bfb1-2fbbebcdb7d0.jpg)
+
+This mapping is due to the fact that the MC68000 CPU begins searching for instructions at the bottom of its address space and if it does not find them, it will halt. Theoretically this could be solved with a coprocessor that serves only to load instructions to RAM, or a signal generated elsewhere such as on the backplane that forcibly disables the RAM and enables the ROM, but for simplicity's sake, this is how I have chosen to do things. 
