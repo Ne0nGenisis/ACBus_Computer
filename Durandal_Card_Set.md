@@ -27,7 +27,7 @@ The two smaller logic ICs are for byte selection. With the way that the memory s
 
 These three ICs, the 74LS154, 74LS04, and 74LS08, or equivalents to replicate their functions, are to be duplicated across all cards to allow for address decoding. 
 
-## Board ID-007: ROM Card (1MB)
+## Board ID-008: ROM Card (1MB)
 The ROM card is fundamentally the same as the RAM card, but it only features a single 1MB bank of M27C4001 EEPROM ICs and is assigned to bank 0, between address $000000 and $0FFFFF. 
 
 ![ROMBoard](https://user-images.githubusercontent.com/37624825/161419825-74248307-7c33-4c73-bfb1-2fbbebcdb7d0.jpg)
