@@ -3,6 +3,10 @@ A backplane bus for simple 8-bit, 16-bit, and potentially 32-bit computers.
 
 This is a project started the evening of the 11th of March, 2022, to create a simple Motorola MC68000 based backplane computer. I don't know if it's going to end up materializing without a source of funding to purchase chips, sockets, capacitors, and have PCBs made or source wire wrap testing boards. The scope of the project has changed to be a general purpose bus for a number of potential target CPUs on "System Card Sets", including the MOS Technologies 6502, the Zilog Z80, the Motorola MC68000/MC68010, and the Motorola MC68020/MC68030. 
 
+Currently, the only processor whose system designs are in active development is the Motorola MC68000. 
+
+The Project files, both current and past revisions, may be downloaded here (large archive hosted offsite): [Boop](https://drive.google.com/drive/folders/1bekq5AHRuLb5LENeTmTrUXKBOzXwS-T3?usp=sharing).
+
 ## System Architecture
 
 The core of the system is a backplane that accepts cards on a 64-pin slot called "ACBUS" (for Anni's Computer Bus, Anni being me, Ne0nGenisis) which grounds the cards and provides voltage from a standard ATX power supply, and a number of common uncommitted pins between slots to facilitate communication across the target CPU's address and data buses. 
