@@ -28,7 +28,7 @@ The two smaller logic ICs are for byte selection. With the way that the memory s
 These three ICs, the 74LS154, 74LS04, and 74LS08, or equivalents to replicate their functions, are to be duplicated across all cards to allow for address decoding. 
 
 ## Board ID-011: ROM Card (Configurable Capacity)
-The ROM card is fundamentally similar to the RAM card, but it only features a single bank of STT 39SF0x0 EEPROM ICs and is assigned to bank 0, between address $000000 and $0FFFFF. 
+The ROM card is fundamentally similar to the RAM card, but it only features a single bank of STT 39SF0x0 EEPROM ICs and is assigned to bank 0, between address $000000 and $0FFFFF. It replaces the previous ID-008 and ID-010 boards that were either designed with 1MB of UV eraseable ICs in mind, ~~were mistakenly designed with 256 kilobit chips instead of 256 kilobyte chips~~, or were otherwise specific to the 68K system of addressing. 
 
 ![ROMBoardV4](https://user-images.githubusercontent.com/37624825/162069318-8ba482ca-41b9-4304-b1fe-77e404725dd5.jpg)
 
