@@ -27,9 +27,28 @@ The two smaller logic ICs are for byte selection. With the way that the memory s
 
 These three ICs, the 74LS154, 74LS04, and 74LS08, or equivalents to replicate their functions, are to be duplicated across all cards to allow for address decoding. 
 
-## Board ID-008: ROM Card (1MB)
-The ROM card is fundamentally the same as the RAM card, but it only features a single 1MB bank of M27C4001 EEPROM ICs and is assigned to bank 0, between address $000000 and $0FFFFF. 
+## Board ID-011: ROM Card (Congigurable Capacity)
+The ROM card is fundamentally similar to the RAM card, but it only features a single bank of STT 39SF0x0 EEPROM ICs and is assigned to bank 0, between address $000000 and $0FFFFF. 
 
-![ROMBoard](https://user-images.githubusercontent.com/37624825/161419825-74248307-7c33-4c73-bfb1-2fbbebcdb7d0.jpg)
+![ROMBoardV4](https://user-images.githubusercontent.com/37624825/162069318-8ba482ca-41b9-4304-b1fe-77e404725dd5.jpg)
 
 This mapping is due to the fact that the MC68000 CPU begins searching for instructions at the bottom of its address space and if it does not find them, it will halt. Theoretically this could be solved with a coprocessor that serves only to load instructions to RAM, or a signal generated elsewhere such as on the backplane that forcibly disables the RAM and enables the ROM, but for simplicity's sake, this is how I have chosen to do things. 
+
+It was designed with the intent to be universal across *any* CPU with a 16-bit data bus and a 24-bit address bus by way of configuration jumpers, and configurable with either 256KB, 512KB, or 1MB of storage space for ROM code including the system's kernel and device control software, bootloaders for disk-based operating systems, or included operating systems and programs. The configuration settings are as follows. 
+
+#### For 256K
+- Use 39SF010 1 megabit ROM ICs or equivalent
+
+#### For 512K
+- Use 39SF020 2 megabit ROM ICs or equivalent
+
+#### For 1M
+- Use 39SF040 4 megabit ROM ICs or equivalent
+
+#### For MC68000 or MC68010
+- Close Jumper J1 pins B and C
+- Close Jumper J2 pins B
+
+#### For other 16D/24A CPUs
+- Close Jumper J1 pins A
+- Close Jumper J2 pins A
