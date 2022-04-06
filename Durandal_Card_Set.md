@@ -47,8 +47,8 @@ It was designed with the intent to be universal across *any* CPU with a 16-bit d
 
 #### For MC68000 or MC68010
 - Close Jumper J1 pins B and C
-- Close Jumper J2 pins B
+- Close Jumper J2 pins A
 
 #### For other 16D/24A CPUs
 - Close Jumper J1 pins A
-- Close Jumper J2 pins A
+- Close Jumper J2 pins B
