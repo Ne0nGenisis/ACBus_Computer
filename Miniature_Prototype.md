@@ -8,19 +8,15 @@
 
   The ACBus Backplane System uses small 10x10cm PCBs intended to be purchasable at JLCPCB's discounted prototyping rate of just a few dollars for a set of 5 boards up to 4 layers. This allows for true internal ground and power planes that would not be available on PCBWay's restricted 2-layer prototyping boards. 
   
-## Backplane Board (026)
+## Backplane Board 
 
-  The backplane PCB contains four 96-pin DIN-41612 connectors alongside a terminal connector providing voltage to the slots, and four small holes that can be used to connect the system to standoff feet or a chassis designed to hold it. The prototype will be able to host up to four modules. The intended modules are listed below. 
+  The backplane PCB contains four 96-pin DIN-41612 connectors alongside a MOLEX Micro-Fit Jr. connector providing 5v and 12v to the slots, and four small holes that can be used to connect the system to standoff feet or a chassis designed to hold it. The prototype will be able to host up to four modules. The intended modules are listed below. 
   
 ## CPU Module (016A)
-
-<img src="https://user-images.githubusercontent.com/37624825/221440734-10937069-ae96-4c18-8982-dc15348ffb77.png" width="250" height="250"/>
 
   The CPU module A variant integrates a PGA Motorola 68000 or 68010, as well as a number of line drivers (74LS245) to ensure the CPU has control of the bus, and the system's crystal oscillator and clock dividers to derive all of the necessary frequencies for the system components. The CPU's address, data, and memory control bus, as well as the various system clock signals, are exposed to the 96-pin connector at the bottom of the card. 
   
 ## RAM/ROM Module (RAM - 020, ROM TBD)
-
-<img src="https://user-images.githubusercontent.com/37624825/221441015-90eef758-38f3-4fd1-b0c0-f06f86ef8286.png" width="250" height="250"/>
 
   The prototype RAM module features four 512 kilobyte/4 megabit SRAM packages (AS6C4008) and decoder circuitry in the form of a 74LS154 for device decoding, using the last 4 address lines and decoding them into 16 chip enable lines for device selection, and a 74LS04 and 74LS32 to decode the R/W, LDS, and UDS signals from the CPU and using them to create four enable signals for the memory packages. This is necessary as the system uses 8-bit memory packages connected in parallel to the 16 bit memory bus, and selecting only one or the other is done using the following signals: 
   
@@ -38,8 +34,6 @@
   The Serial Communication module features a 68681 DUART chip, hosting two serial communication channels at block 5, as well as the 74LS154 device decoder. It is connected to the first 8 bits of the data bus and the first 4 bits of the address bus on the CPU, as well as the Data Transfer Acknowledge (DTACK) signal line. 
   
 # Integrated Board (027)
-
-<img src="https://user-images.githubusercontent.com/37624825/221441100-20eb5989-9e3b-43cc-956a-2f90444cfe8e.png" width="250" height="250"/>
 
   The integrated PCB is in a Mini ITX format and features all components mentioned so far, including the CPU, RAM and ROM, the DUART, memory and device address decoding, and the oscillator/divider circuitry. On top of that, the board also features an ACBus/96 expansion slot for future use with expansion devices. This port exposes the full Data and Address buses, as well as the R/W, AS, UDS and LDS signals, the master clock signal of 15 MHz, and supplies 5 and 12 volts. it will eventually be used for other expansion modules, such as the intended audio and video solutions and keyboard controllers. 
   
