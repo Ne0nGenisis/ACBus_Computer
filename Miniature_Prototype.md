@@ -5,10 +5,14 @@
   This number of unused pins means that the existing 68010 computer design is not at all constrained by the use of exactly as many functional pins as the CPU has, and the system's backplane could also be repurposed for both more advanced processors such as the 68020/68030, and less advanced systems such as the 6502 and Z80, without requiring the use of large cards with gigantic card edges. 
 
   In addition to this backplane model, there is also a condensed single board prototype in an ITX format that contains all of the componentry that the backplane system uses, but uses less decoding logic as each individual module is not required to use its own memory and device decoder circuits. 
+  
+# Prototyping Board System
+
+  The first prototype of the system is likely going to be built on perfboards intended to mimic the final layout of the card prototype. It will usea large number of sockets and individual wires in place of traces, but it will function as a place to attempt development of the kernel ROM of the system. 
 
 # Backplane System
 
-  The ACBus Backplane System uses small 10x10cm PCBs intended to be purchasable at JLCPCB's discounted prototyping rate of just a few dollars for a set of 5 boards up to 4 layers. This allows for true internal ground and power planes that would not be available on PCBWay's restricted 2-layer prototyping boards. 
+  The ACBus Backplane System uses small 10x10cm PCBs intended to be purchasable at JLCPCB's discounted rate of just a few dollars for a set of 5 boards up to 4 layers. This allows for true internal ground and power planes that would not be available on PCBWay's similar offer that is restricted to dual layer boards. 
   
 ## Backplane Board 
 
